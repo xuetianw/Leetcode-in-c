@@ -1,7 +1,6 @@
 //
 // Created by fred on 2020-03-04.
 
-#include <zconf.h>
 #include "stdlib.h"
 
 //  Definition for singly-linked list.
