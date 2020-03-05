@@ -44,6 +44,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
         res = res -> next;
         res->val = 1;
     }
+    // add this line to get rid of error
     res->next = NULL;
     return head->next;
 
