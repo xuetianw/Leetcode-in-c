@@ -17,6 +17,8 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
 //                arr[0] = i;
 //                arr[1] = j;
 //                return arr;
+        // return local variable on the stack is not good
+
             }
         }
     }
