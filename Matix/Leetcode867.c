@@ -8,9 +8,9 @@ int** transpose(int** A, int ASize, int* AColSize, int* returnSize, int** return
     if (A == NULL) {
         return NULL;
     }
-    int** res = malloc(ASize * sizeof(int*));
+    int** res = malloc((*AColSize) * sizeof(int*));
     for (int i = 0; i < ASize; i++) {
-        res[i] = malloc(*AColSize * sizeof(int));
+        res[i] = malloc(ASize * sizeof(int));
     }
 
     for (int i = 0; i < ASize; i++) {
@@ -20,7 +20,6 @@ int** transpose(int** A, int ASize, int* AColSize, int* returnSize, int** return
     }
 
     *returnSize = *AColSize;
-    **returnColumnSizes = ASize;
+    *returnColumnSizes = malloc(*AColSize * sizeof(int));
     return res;
-
 }
