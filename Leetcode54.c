@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
+// test cases does not pass in c
 int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSize){
 
     if (matrixSize == 0) {
@@ -21,7 +21,7 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
     int top = 0;
     int bottom = matrixSize - 1;
     int count = 0;
-    int size = matrixSize * *matrixColSize;
+    int size = matrixSize * (*matrixColSize);
     int *res_arr = malloc (size * sizeof(*res_arr));
     while (top <= bottom && left <= right) {
         for(int i = left; i <= right; i++) {
