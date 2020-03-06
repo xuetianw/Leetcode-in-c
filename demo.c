@@ -29,7 +29,8 @@ int main(int argc, char ** argv) {
     int input_arr[] = {4,2,3,4};
     int num_of_arg = 4;
 //    struct sum_runner_struct args[num_of_arg];
-    struct sum_runner_struct* args = malloc(num_of_arg * sizeof(*args));
+    struct sum_runner_struct* args
+            = malloc(num_of_arg * sizeof(*args));
 
 
     pthread_t tids[num_of_arg];

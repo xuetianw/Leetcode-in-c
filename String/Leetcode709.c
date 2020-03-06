@@ -21,8 +21,12 @@ char *toLowerCase(char * str){
 }
 
 int main(int argc, char ** argv) {
-    char* arr = toLowerCase("As");
-    printf("length of arr is %lu\n", strlen(arr));
-    printf("the arra is %s\n", arr);
-    free(arr);
+//    char* arr = toLowerCase("As");
+//    printf("length of arr is %lu\n", strlen(arr));
+//    printf("the arra is %s\n", arr);
+//    free(arr);
+//    char* arr1 = "a";
+//    char* arr2 = "b";
+//    strcat(arr1, arr2);
+//    printf("the arra is %s\n", arr1);
 }

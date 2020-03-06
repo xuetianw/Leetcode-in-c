@@ -19,7 +19,8 @@ int** transpose(int** A, int ASize, int* AColSize, int* returnSize, int** return
         }
     }
 
-    *returnSize = ASize * *AColSize;
+    *returnSize = *AColSize;
+    **returnColumnSizes = ASize;
     return res;
 
 }
