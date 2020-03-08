@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 int**
-matrixReshape(int nums[2][4], int numsSize, int* numsColSize, int r, int c, int* returnSize, int** returnColumnSizes) {
+matrixReshape(int** nums, int numsSize, int* numsColSize, int r, int c, int* returnSize, int** returnColumnSizes) {
     int MULTIPLICATION = numsSize * (*numsColSize);
     if (r < 0 || c < 0 || r * c != MULTIPLICATION) {
         return nums;
@@ -36,12 +36,16 @@ matrixReshape(int nums[2][4], int numsSize, int* numsColSize, int r, int c, int*
 
 int main(int argc, char** argv) {
     int length = 4;
-    int size = 0;
-    int* ColumnSizes = malloc(sizeof(ColumnSizes));
-    int matrix[2][4] = {
-            {10, 11, 12, 13},
-            {14, 15, 16, 17}
-    };
+    int size;
+    int* ColumnSizes;
+    int** matrix = malloc(2 * sizeof(int *));
+    for (int i = 0; i < 2; i++) {
+        matrix[i] = malloc(4 * sizeof(int));
+    }
+    matrix[0][0] = 10;matrix[0][1] = 11;matrix[0][2] = 12;matrix[0][3] = 13;
+    matrix[1][0] = 14;matrix[1][1] = 15;matrix[1][2] = 16;matrix[1][3] = 17;
+
+
     int** temp = matrixReshape(matrix, 2, &length, 4, 2, &size, &ColumnSizes);
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 2; j++) {
@@ -56,6 +60,10 @@ int main(int argc, char** argv) {
     free(temp);
 
     free(ColumnSizes);
+    for (int i = 0; i < 2; i++) {
+        free(matrix[i]);
+    }
+    free(matrix);
 
     return 0;
 }
