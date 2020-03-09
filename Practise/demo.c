@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "test.h"
+#include "../Notes/test.h"
 #include <pthread.h>
 #include <stdlib.h>
 
